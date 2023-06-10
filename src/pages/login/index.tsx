@@ -1,17 +1,26 @@
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const Login = () => {
+	const { data: session } = useSession();
+	const router = useRouter();
 
-	const handleLogin = () => {
-		void signIn("auth0", {
-			callbackUrl: "/api/auth/callback/auth0",
-		});
+	const handleLogin = async () => {
+		await signIn("auth0");
+		await router.push("/app");
 	};
+
+	useEffect(() => {
+		if (session) {
+			void router.push("/app");
+		}
+	}, [session, router]);
 
 	return (
 		<div>
 			<h1>Login</h1>
-			<button onClick={handleLogin}>Sign In</button>
+			<button onClick={() => void handleLogin()}>Sign In</button>
 		</div>
 	);
 };
