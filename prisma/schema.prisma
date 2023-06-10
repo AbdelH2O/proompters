@@ -69,3 +69,15 @@ model VerificationToken {
 
     @@unique([identifier, token])
 }
+
+// This is the image prompt challenge model.
+// TODO: Add the image submission model below.
+model ImageProompt {
+	id        String   @id @default(cuid())
+	createdAt DateTime @default(now())
+	updatedAt DateTime @updatedAt
+	// base64 encoded image
+	utID	  String
+	
+	@@index([id])
+}
