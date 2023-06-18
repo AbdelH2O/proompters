@@ -28,6 +28,8 @@ export const env = createEnv({
 		AUTH0_ISSUER: z.string(),
 		UPLOADTHING_SECRET: z.string(),
 		UPLOADTHING_APP_ID: z.string(),
+		STABILITY_HOST: z.string().url(),
+		STABILITY_API_KEY: z.string(),
 	},
 
 	/**
@@ -55,6 +57,8 @@ export const env = createEnv({
 		AUTH0_ISSUER: process.env.AUTH0_ISSUER,
 		UPLOADTHING_SECRET: process.env.UPLOADTHING_SECRET,
 		UPLOADTHING_APP_ID: process.env.UPLOADTHING_APP_ID,
+		STABILITY_HOST: process.env.STABILITY_HOST,
+		STABILITY_API_KEY: process.env.STABILITY_API_KEY,
 	},
 	/**
 	 * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.

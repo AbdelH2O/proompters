@@ -5,14 +5,18 @@ const ClosableInput = ({
 	title,
 	handleColor,
 	placeHolder,
+	value,
+	setValue,
 }: {
 	title: string;
 	handleColor: string;
 	placeHolder: string;
+	value: string;
+	setValue: (value: string) => void;
 }) => {
 	return (
 		<div className="w-full px-4">
-			<div className="mx-auto w-full rounded-md bg-primary-800 p-1">
+			<div className="mx-auto w-full rounded-md bg-primary-800 p-1 border border-primary-700 group">
 				<Disclosure
 					defaultOpen={true}
 				>
@@ -27,7 +31,7 @@ const ClosableInput = ({
 										color: handleColor,
 									}}
 								/>
-								<span>{title}</span>
+								<span className="group-hover:scale-[1.02] group-hover:font-semibold transition-all duration-100 ease-in-out">{title}</span>
 							</Disclosure.Button>
 							<Disclosure.Panel className=" text-sm text-gray-500">
 								<textarea
@@ -35,6 +39,10 @@ const ClosableInput = ({
 										e.currentTarget.style.height = "auto";
 										e.currentTarget.style.height = `${e.currentTarget.scrollHeight}px`;
 									}}
+									onChange={(e) => {
+										setValue(e.currentTarget.value);
+									}}
+									value={value}
 									style={{ resize: "none", height: "auto" }}
 									className="h-10 w-full rounded-md border-0 bg-primary-800 p-2 text-sm focus:outline-none focus:ring-0 text-stone-100"
 									placeholder={placeHolder}

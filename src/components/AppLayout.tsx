@@ -25,7 +25,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
 				<div className="flex w-full flex-row items-center justify-between gap-4">
 					<button
 						onClick={() => void router.push("/")}
-						className="cursor-pointer rounded-sm bg-indigo-800 p-1 font-ibm text-2xl font-semibold text-white transition-all duration-100 hover:scale-[1.02] hover:brightness-110"
+						className="cursor-pointer rounded-md bg-indigo-800 p-1 px-2 font-ibm text-2xl font-semibold text-white transition-all duration-100 hover:scale-[1.02] hover:brightness-110"
 					>
 						Proompters
 					</button>
