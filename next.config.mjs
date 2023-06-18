@@ -22,7 +22,17 @@ const config = {
 		remotePatterns: [
 			{
 				protocol: "https",
-				hostname: "images.unsplash.com",
+				hostname: "api.dicebear.com",
+				port: "",
+			},
+			{
+				protocol: "https",
+				hostname: "s.gravatar.com",
+				port: "",
+			},
+			{
+				protocol: "https",
+				hostname: "uploadthing.com",
 				port: "",
 			},
 		],

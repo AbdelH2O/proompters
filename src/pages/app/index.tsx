@@ -1,4 +1,5 @@
-import Layout from "~/components/Layout";
+import AppLayout from "~/components/AppLayout";
+// import Layout from "~/components/Layout";
 
 const Home = () => {
 	return (
@@ -9,9 +10,12 @@ const Home = () => {
 				backgroundSize: "22px 22px",
 			}}
 		>
-			<Layout>
+			{/* <Layout>
 				<h1 className="h-screen font-bold text-primary-200 font-ibm">WELCOME BACK ABDELH2O!</h1>
-			</Layout>
+			</Layout> */}
+			<AppLayout>
+				<h1 className="h-screen font-bold text-primary-200 font-ibm">WELCOME BACK ABDELH2O!</h1>
+			</AppLayout>
 		</div>
 	);
 };

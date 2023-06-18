@@ -58,6 +58,7 @@ model User {
     email         String?   @unique
     emailVerified DateTime?
     image         String?
+	credits		  Int?		@default(0)
     accounts      Account[]
     sessions      Session[]
 }
@@ -76,8 +77,11 @@ model ImageProompt {
 	id        String   @id @default(cuid())
 	createdAt DateTime @default(now())
 	updatedAt DateTime @updatedAt
-	// base64 encoded image
 	utID	  String
+	hints	  String
+	width	  Int
+	height	  Int
+	
 	
 	@@index([id])
 }

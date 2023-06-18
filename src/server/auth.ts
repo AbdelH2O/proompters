@@ -4,6 +4,7 @@ import {
 	getServerSession,
 	type NextAuthOptions,
 	type DefaultSession,
+	type DefaultUser,
 } from "next-auth";
 // import DiscordProvider from "next-auth/providers/discord";
 import Auth0Provider from "next-auth/providers/auth0";
@@ -20,10 +21,21 @@ declare module "next-auth" {
 	interface Session extends DefaultSession {
 		user: {
 			id: string;
+			credits: number;
 			// ...other properties
 			// role: UserRole;
 		} & DefaultSession["user"];
 	}
+
+	interface User extends DefaultUser {
+		credits: number;
+	}
+	// interface AdapterUser extends User {
+	// 	id: string
+	// 	email: string
+	// 	emailVerified: Date | null
+	// 	credits: number
+	// }
 
 	// interface User {
 	//   // ...other properties
@@ -43,6 +55,7 @@ export const authOptions: NextAuthOptions = {
 			user: {
 				...session.user,
 				id: user.id,
+				credits: user.credits,
 			},
 		}),
 	},

@@ -8,12 +8,12 @@ const Login = () => {
 
 	const handleLogin = async () => {
 		await signIn("auth0");
-		await router.push("/app");
+		await router.push("/");
 	};
 
 	useEffect(() => {
 		if (session) {
-			void router.push("/app");
+			void router.push("/");
 		}
 	}, [session, router]);
 

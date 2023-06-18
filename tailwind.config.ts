@@ -15,10 +15,12 @@ export default {
 					700: "#495057",
 					800: "#343A40",
 					900: "#212529",
+					950: "#121212",
 				}
 			},
 			fontFamily: {
 				ibm: ["IBM Plex Mono", "monospace"],
+				jetbrains: ["JetBrains Mono", "monospace"],
 			},
 		},
 	},
