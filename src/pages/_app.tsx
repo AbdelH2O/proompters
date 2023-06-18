@@ -3,8 +3,9 @@ import { SessionProvider } from "next-auth/react";
 import { type AppProps, type AppType } from "next/app";
 import type { NextComponentType  } from "next";
 import { api } from "~/utils/api";
-import "~/styles/globals.css";
 import AuthGuard from "~/components/Providers/AuthGuard";
+import Loader from "~/components/Loader";
+import "~/styles/globals.css";
 
 //Add custom appProp type then use union to add it
 type CustomAppProps = AppProps<{ session: Session | null}> & {
@@ -17,6 +18,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }: CustomAppProps) => {
 	return (
 		<SessionProvider session={session}>
+			<Loader />
 			{
 				Component.auth ? (
 					<AuthGuard>

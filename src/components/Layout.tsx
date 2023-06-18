@@ -27,11 +27,7 @@ function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(" ");
 }
 
-export default function Layout({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<>
 			{/*
@@ -390,7 +386,7 @@ export default function Layout({
 						{/* Main 3 column grid */}
 						<div className="flex items-start gap-4 lg:gap-8">
 							{/* Left column */}
-							<div className="grid grid-cols-1 gap-4 w-full">
+							<div className="grid w-full grid-cols-1 gap-4">
 								<section aria-labelledby="section-1-title">
 									<h2
 										className="sr-only"
@@ -399,9 +395,7 @@ export default function Layout({
 										Section title
 									</h2>
 									<div className="overflow-hidden rounded-lg bg-primary-700 shadow">
-										<div className="p-6">
-											{children}
-										</div>
+										<div className="p-6">{children}</div>
 									</div>
 								</section>
 							</div>
